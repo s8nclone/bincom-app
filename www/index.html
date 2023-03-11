@@ -34,15 +34,39 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
+        <title>Citizens Report Solutions</title>
     </head>
     <body>
         <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+            <header class="app_header">
+                <div class="topnav">
+                    <img class="app-icon" alt="app icon" src="img/logo.png" height="50" width="50">
+                    <h1>Bincom CRS</h1>
+                </div>
+                
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                </div>
+            </header>
+
+            <main>
+                <aside>
+                    <div class="addReport">
+                        <button id="createNewReport" class="newReport">New</button>
+                        <div id="newCard"></div>
+                    </div>
+                </aside>
+                <section>
+                    <div class="timeline">
+                        <h2>Timeline</h2>
+                        <ul id="newPost" class="timeline_post"></ul>
+                    </div>
+                </section>
+                
+            </main>
+            
+            
         </div>
         <script src="cordova.js"></script>
         <script src="js/index.js"></script>

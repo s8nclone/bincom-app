@@ -33,42 +33,11 @@ body {
     padding:0px;
     /* Padding to avoid the "unsafe" areas behind notches in the screen */
     padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px);
-    text-transform:uppercase;
+    text-transform: capitalize;
     width:100%;
 }
 
 /* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
-}
-
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
-}
-
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
-}
 
 .event {
     border-radius:4px;
@@ -102,9 +71,91 @@ h1 {
     -webkit-animation:fade 3000ms infinite;
 }
 
+.app_header {
+    text-align: center;
+}
 
-@media screen and (prefers-color-scheme: dark) {
-    body {
-        background-image:linear-gradient(to bottom, #585858 0%, #1B1B1B 51%);
-    }
+.topnav {
+    display: flex;
+    justify-content: space-around;
+    width: 30rem;
+}
+
+.timeline {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding: .2rem;
+}
+
+.addReport {
+    position: fixed;
+    bottom: 5em;
+    right: 5em;
+}
+
+.newReport {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: green;
+    border: 1px solid greenyellow;
+    border-radius: 50%;
+}
+
+.new-title {
+    width: 10rem;
+    height: 1.5rem;
+}
+
+.newReportCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    box-shadow: 2px #fff;
+    padding: 1rem;
+    background: #A7A7A7;
+    align-items: flex-start;
+}
+
+.new-report {
+    width: 10rem;
+    height: 10rem;
+}
+
+.btn {
+    background: #4B946A;
+    font-size: .6rem;
+    border: 1px solid green;
+    border-radius: 5px;
+    width: 5rem;
+    height: 1.5rem;
+    margin-top: .5rem;
+    margin-left: .5rem;
+}
+
+.timeline_post {
+    list-style-type: none;
+    
+}
+
+.timeline_content {
+    background: #A7A7A7;
+    border: 1px solid greenyellow;
+    padding: .2rem;
+    margin-top: .5rem;
+}
+
+.post_header {
+    text-decoration: double underline;
+}
+
+.submitBtn {
+    background: #4B946A;
+    font-size: .6rem;
+    border: 1px solid green;
+    border-radius: 5px;
+    width: 10rem;
+    height: 1.5rem;
+    margin-top: .5rem;
+    margin-left: .5rem;
 }
