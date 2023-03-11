@@ -26,7 +26,7 @@ function onDeviceReady() {
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
-    postButton.addEventListener('click', setLocation, vibrationPattern)
+    postButton.addEventListener('click', setLocalStorage, setLocation, vibrationPattern)
     addCameraButton.addEventListener('click', cameraTakePicture)
     addMediaButton.addEventListener('click', cameraGetPicture)
 }
@@ -196,4 +196,10 @@ function cameraTakePicture(e) {
  function vibrationPattern() {
     var pattern = [1000, 1000, 1000, 1000];
     navigator.vibrate(pattern);
+ }
+
+//set local storage
+function setLocalStorage() { 
+    localStorage.setItem("title", inputTitle.value); 
+    localStorage.setItem("comment", inputReport.value);
  }
